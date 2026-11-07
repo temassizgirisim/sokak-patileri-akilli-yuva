@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokak Patileri İçin Akıllı Yuva | PR Projesi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            700: '#A16207',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0B0B;
+            color: #F3F4F6;
+        }
+        h1, h2, h3, .font-serif-custom {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FACC15 0%, #CA8A04 50%, #FEF08A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(to right, #CA8A04, #FACC15, #CA8A04) 1;
+        }
+        .gold-card {
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            transition: all 0.3s ease;
+        }
+        .gold-card:hover {
+            border-color: rgba(234, 179, 8, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(234, 179, 8, 0.15);
+        }
+    </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-gold-600/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-600 to-gold-400 flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold-500 font-semibold block">Halkla İlişkiler Projesi</span>
+                    <span class="font-serif-custom text-lg sm:text-xl font-bold tracking-wide text-white">Akıllı Yuva</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#giris" class="hover:text-gold-400 transition">Genel Bakış</a>
+                <a href="#analiz" class="hover:text-gold-400 transition">Araştırma</a>
+                <a href="#strateji" class="hover:text-gold-400 transition">Strateji & Slogan</a>
+                <a href="#etkinlikler" class="hover:text-gold-400 transition">Etkinlikler</a>
+                <a href="#medya" class="hover:text-gold-400 transition">Medya & Bütçe</a>
+            </nav>
+            <div>
+                <a href="#etkinlikler" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-gold-600 to-gold-500 text-black shadow-md hover:shadow-gold-500/20 transition transform hover:-translate-y-0.5">
+                    Projeyi İncele
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="giris" class="relative overflow-hidden py-20 lg:py-32 flex items-center justify-center">
+        <!-- Background Glow Elements -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-6">
+                <i class="fa-solid fa-star text-[10px]"></i>
+                <span>Kurumsal İletişim & Sosyal Sorumluluk</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-serif-custom tracking-tight text-white mb-6 leading-tight">
+                Sokak Patileri İçin <br><span class="gold-gradient">Akıllı Yuva</span>
+            </h1>
+            
+            <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                İlkokul çağındaki çocuklarda hayvan sevgisini, sokak hayvanlarına karşı sorumluluk bilincini ve empatiyi geliştiren, teknoloji ve yerel yönetim entegrasyonlu kapsamlı halkla ilişkiler kampanyası.
+            </p>
+
+            <!-- Mission & Vision Cards in Hero -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto mb-12">
+                <div class="gold-card p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-gold-500/10 text-7xl pointer-events-none"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="flex items-center space-x-3 mb-3 text-gold-400">
+                        <i class="fa-solid fa-compass text-xl"></i>
+                        <h3 class="font-serif-custom text-xl font-bold text-white">Misyonumuz</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Çocuklara erken yaşta sokak hayvanlarının yaşam hakkına saygı duymayı öğretmek, onlara karşı sevgi ve koruma bilinci kazandırarak merhametli bireyler yetişmesini sağlamak.
+                    </p>
+                </div>
+                <div class="gold-card p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-gold-500/10 text-7xl pointer-events-none"><i class="fa-solid fa-eye"></i></div>
+                    <div class="flex items-center space-x-3 mb-3 text-gold-400">
+                        <i class="fa-solid fa-binoculars text-xl"></i>
+                        <h3 class="font-serif-custom text-xl font-bold text-white">Vizyonumuz</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Sokak hayvanlarının zarar görmediği, çocukların onlarla güvenle, şefkatle ve bilinçle iletişim kurduğu sevgi dolu bir toplumsal gelecek inşa etmek.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Araştırma ve Durum Analizi -->
+    <section id="analiz" class="py-20 bg-[#121212] border-t border-b border-gold-600/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 uppercase tracking-widest text-xs font-bold block mb-2">Stratejik Temel</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-serif-custom text-white">Araştırma ve Durum Analizi</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="gold-card p-8 rounded-3xl space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-question"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif-custom text-2xl font-bold text-white">Neden Bu Konuyu Seçtik?</h3>
+                            <span class="text-xs text-gold-500 font-medium">Toplumsal İhtiyaç Analizi</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        Çocukların erken yaşta doğayı ve hayvanları koruma bilinci kazanması, onların vicdani, etik ve sosyal gelişiminin temel taşını oluşturur. Günümüzde artan hayvana şiddet, kayıtsızlık ve dışlama vakalarının önüne geçmek, ancak köklü bir zihniyet değişimini ilkokul çağındaki çocuklara doğru yöntemlerle aşılamakla mümkündür.
+                    </p>
+                </div>
+
+                <div class="gold-card p-8 rounded-3xl space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif-custom text-2xl font-bold text-white">Mevcut Durum Analizi</h3>
+                            <span class="text-xs text-gold-500 font-medium">Saha Gözlemleri</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        Yapılan gözlemler ve araştırmalar; çocukların sokak hayvanlarına yaklaşırken bazen bilinçsiz korkular yaşadığını veya sosyal etkisizlik nedeniyle zarar verici davranışlara tanık olduklarını göstermektedir. Ailelerin ve okulların bu konuda ortak bir dil geliştirmesi, teorik bilginin pratik oyunlarla desteklenmesi hayati önem taşımaktadır.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Target Audience Cards -->
+            <div class="mt-12">
+                <h3 class="text-center font-serif-custom text-2xl font-bold text-white mb-8">Hedef Kitle Segmentasyonu</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="gold-card p-6 rounded-2xl flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-child"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Birincil Hedef Kitle</h4>
+                            <p class="text-gray-300 text-sm">6-11 yaş aralığındaki ilkokul öğrencileri. Davranış biçimlerinin ve empati yeteneğinin en hızlı şekillendiği kritik yaş grubu.</p>
+                        </div>
+                    </div>
+                    <div class="gold-card p-6 rounded-2xl flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-users-rectangle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">İkincil Hedef Kitle</h4>
+                            <p class="text-gray-300 text-sm">Çocukların ebeveynleri ve ilkokul öğretmenleri. Ev içi alışkanlıkları ve sınıf kültürü yönlendirme gücüne sahip temel paydaşlar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strateji, Slogan ve Mesaj -->
+    <section id="strateji" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold-500 uppercase tracking-widest text-xs font-bold block mb-2">Kreatif Çatı</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-serif-custom text-white mb-16">Kampanya Stratejisi & İletişim Dili</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Slogan Card -->
+                <div class="gold-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-6 text-xl">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-white mb-3">Resmi Slogan</h3>
+                        <p class="text-gold-400 font-serif-custom text-2xl italic font-bold mb-4">"Küçük Patiler, Büyük Sevgiler!"</p>
+                    </div>
+                    <p class="text-gray-400 text-xs">Çocukların minik adımlarıyla büyük bir sevgi bağı kuracağını vurgulayan ana çağrı.</p>
+                </div>
+
+                <!-- Main Message Card -->
+                <div class="gold-card p-8 rounded-3xl flex flex-col justify-between border-gold-500/50">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-6 text-xl">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-white mb-3">Ana İletişim Mesajı</h3>
+                        <p class="text-white font-serif-custom text-2xl italic font-bold mb-4">"Yalnız değiller, çünkü bu sokak hepimizin."</p>
+                    </div>
+                    <p class="text-gray-400 text-xs">Sokak hayvanlarının yalnız olmadığını ve yaşam alanını ortak paylaştığımız bilinci.</p>
+                </div>
+
+                <!-- Strategy Approach Card -->
+                <div class="gold-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-6 text-xl">
+                            <i class="fa-solid fa-chess-knight"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-white mb-3">Temel Strateji</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Sokaklardaki sevimli dostlarımızı çocukların oyun dünyasına entegre etmek; onlara doğrudan besleme, barınma ve takip sorumluluğu vererek empatiyi somut bir yaşantıya dönüştürmek.
+                        </p>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-gold-500 font-bold">Deneyimsel Öğrenme</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Etkinlik Planlaması (Taktikler) -->
+    <section id="etkinlikler" class="py-20 bg-[#121212] border-t border-b border-gold-600/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 uppercase tracking-widest text-xs font-bold block mb-2">Operasyonel Plan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-serif-custom text-white">Etkinlik Planlaması (Taktikler)</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Atölye -->
+                <div class="gold-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 bg-gold-500/20 text-gold-400 rounded-full text-xs font-bold uppercase">Okul İçi</span>
+                            <i class="fa-solid fa-school text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-2xl font-bold text-white">"Patiler Sınıfta" Atölyeleri</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Okulların bahçelerine çocukların geri dönüşüm malzemeleriyle tasarlayacağı akıllı kedi ve köpek kulübelerinin yerleştirilmesi. Besleme odaklı günlük görev kartlarının sınıflara dağıtılması.
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-black/40 border-t border-gold-600/20 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-calendar text-gold-400 mr-1.5"></i> Eğitim Dönemi Boyunca</span>
+                        <span class="text-gold-400 font-semibold">İstanbul İlkokulları</span>
+                    </div>
+                </div>
+
+                <!-- AVM Sergisi -->
+                <div class="gold-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 bg-gold-500/20 text-gold-400 rounded-full text-xs font-bold uppercase">Kamusal Alan</span>
+                            <i class="fa-solid fa-store text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-2xl font-bold text-white">"Minik Dostum" Sergisi</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Merkezi AVM'lerde (Akasya, Hilltown vb.) çocukların tasarladığı hayvan temalı çizimlerin ve projelerin sergilendiği, mama markalarının sponsorluğunda interaktif deneyim stantlarının kurulması.
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-black/40 border-t border-gold-600/20 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-calendar text-gold-400 mr-1.5"></i> 3 Günlük Etkinlik</span>
+                        <span class="text-gold-400 font-semibold">Seçkin AVM'ler</span>
+                    </div>
+                </div>
+
+                <!-- Doğa Kampı -->
+                <div class="gold-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 bg-gold-500/20 text-gold-400 rounded-full text-xs font-bold uppercase">Doğa & Aile</span>
+                            <i class="fa-solid fa-campground text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-2xl font-bold text-white">"Pati Dostları" Kampı</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Şehir çevresindeki doğal kamp alanlarında aileler ve çocuklarla birlikte hayvan barınaklarına ziyaretler, veteriner eşliğinde ilk yardım ve bakım eğitimleri, doğa dostu atölyeler.
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-black/40 border-t border-gold-600/20 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-calendar text-gold-400 mr-1.5"></i> Yaz Dönemi</span>
+                        <span class="text-gold-400 font-semibold">Kilyos / İstanbul</span>
+            
